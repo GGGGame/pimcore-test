@@ -1,0 +1,14 @@
+pimcore:
+    objects:
+        custom_layouts:
+            definitions:
+                51f4cb48-4001-4539-a80d-07dbb4d98f8c:
+                    id: 51f4cb48-4001-4539-a80d-07dbb4d98f8c
+                    name: cars
+                    description: ''
+                    creationDate: 1751312112
+                    modificationDate: 1751392835
+                    userOwner: 2
+                    classId: '1'
+                    layoutDefinitions: null
+                    default: 0
