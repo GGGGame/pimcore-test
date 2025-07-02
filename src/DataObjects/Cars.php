@@ -23,7 +23,6 @@ class Cars
         $this->car = $car;
         $this->setGeneralInfo($data, $header);
         $this->car->save();
-        $this->car->clearDependentCache();
     }
 
     private function setGeneralInfo(array $data, array $header): void
