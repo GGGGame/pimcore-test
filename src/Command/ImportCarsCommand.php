@@ -46,14 +46,19 @@ class ImportCarsCommand extends Command
             while (($row = fgetcsv($file, 0, ';')) !== false) {
                 try {
                     if (!$header) {
+                        // this normalizer fix many problems of 
+                        // data conversion from CSV to CamelCase requirements
                         $header = Normalizer::normalize($row);
                         continue;
                     }
 
                     $data = array_combine($header, $row);
 
+                    // transform strings to int value where required
                     $data = Normalizer::normalizeType($data);
 
+                    // Linked to src\DataObjects\Cars.php, i prefer this way to 
+                    // mantain everything readable and easy to maintain.
                     $cars = new Cars($data, $header);
 
                     $output->writeln('Importing: ' . $cars->getCar()->getId());
